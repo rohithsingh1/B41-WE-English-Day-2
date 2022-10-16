@@ -1,0 +1,292 @@
+Document Object
+	The document object represent a web page that is loaded in the browser. By accessing the document object, we can access the element in the HTML page. With the help of document objects, we can add dynamic content to our web page. The document object can be accessed with a window.document or just document.
+
+Syntax:
+
+document.property_name
+
+
+Properties of document:
+
+body: It returns the contents of the body element.
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM body property</title>
+	</head>
+	<body>
+		<h1>GeeksforGeeks</h1>
+		<h2>DOM body property</h2>
+		<button onclick="geeks()">Submit</button>
+		<p id = "gfg"></p>
+		<script>
+			function geeks() {
+				var x = document.body.innerHTML;
+				document.getElementById("gfg").innerHTML =
+				"Display the body content:<br>" + x;
+			}
+		</script>
+	</body>
+</html>				
+
+output 
+
+GeeksforGeeks
+DOM body property
+Display the body content:
+GeeksforGeeks
+DOM body property
+
+
+URL: It returns the complete URL of the document.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM document.URL() Property</title>
+</head>
+<body>
+	<h1>GeeksforGeeks</h1>
+	<h2>DOM document.URL() Property</h2>	
+	<p>
+		For displaying the URL of the document,
+		double click the "View URL" button:
+	</p>
+	<button ondblclick="myURL()">View URL</button>
+	<p id="url"></p>
+	<script>
+	function myURL() {
+		var gfg = document.URL;
+		document.getElementById("url").innerHTML = gfg;
+	}
+	</script>
+</body>
+</html>
+
+
+title: It returns the title element of the document.
+head: It returns the head element of the document.
+
+
+Methods of Document:
+
+Syntax:
+
+document.method_name;
+
+
+addEventListener(): It is used to attach an event handler to the specified element.
+
+createElement(): It is used to create HTML element .
+
+createEvent(): It is used to create a new events object.
+
+createTextNode(): It is used to create a textnode.
+
+execCommand(): It is used to execute a command specified by the user on the editable selected section. It returns a Boolean value.
+
+fullscreenEnabled(): It is used to check whether the document can be viewed in fullscreen mode or not. It returns a boolean value.
+
+getElementById(): It returns the object of the given ID. If no object with that id exists then it returns null.
+
+getElementsByClassName(): It returns an object containing all the elements with the specified class names in the document as objects.
+
+getElementsByName(): It returns an object containing all the elements with the specified name in the document as objects.
+
+getElementsByTagName(): It returns an object containing all the elements with the specified tag names in the document as objects.
+
+querySelector(): It returns the first element that matches a specified CSS selector(s) in the document.
+
+querySelectorAll(): It returns a collection of an element’s child elements that matches a specified CSS selector(s) in the document
+
+removeEventListener(): It removes the event handler from an element that has an attached event.
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>document's Properties</title>
+</head>
+<body>
+	<h1> GeeksforGeeks</h1>
+	<button onclick="myFunction()">CLICK ME</button>
+	<p id="demo"></p>
+	<script>
+		function myFunction() {
+			var title = document.title;
+			var domain = document.domain;
+			var body = document.body;
+			document.getElementById("demo").innerHTML =
+			"the title of the document is : "
+			+ title
+			+ "<br>"
+			+ "domain : "
+			+ domain
+			+ "<br>"
+			+ "body : "
+			+ body;
+		}
+	</script>
+</body>
+</html>
+
+output
+GeeksforGeeks
+CLICK ME
+the title of the document is document's Properties
+domain : 
+body : [object HTMLBodyElement]
+
+
+
+Window Object: The window object is the topmost object of the DOM hierarchy. It represents a browser window or frame that displays the contents of the webpage. Whenever a window appears on the screen to display the contents of the document, the window object is created. 
+
+Syntax:
+
+window.property_name;
+
+
+Properties of the window:
+
+Closed: It holds a Boolean value that represents whether the window is closed or not.
+
+devicePixelRatio: It returns the ratio between physical pixels and device-independent pixels in the current display.
+
+Document: It returns a reference to the document object of that window.
+
+Name: It contains the name of the referenced window.
+
+Window: It returns the current window or frame.
+
+Navigator: It returns a reference to the navigator object.
+
+Methods of Window:
+
+Syntax:
+
+window.method_name;
+
+alert(): It is used to display an alert box. It displays a specified message along with an OK button and is generally used to make sure that the information comes through the user.
+
+clearInterval(): It clears the interval which has been set by the setInterval() function before that.
+
+clearTimeout(): It clears the timeout which has been set by the setTimeout()function before that.
+
+close(): It is used for closing a certain window or tab of the browser which was previously opened.
+
+confirm(): It is used to display a modal dialog with an optional message and two buttons i.e. OK and Cancel. It returns true if the user clicks “OK”, and false otherwise.
+
+focus(): It is used to give focus to an element in the current window.
+
+prompt(): It is used to display a dialog with an optional message prompting the user to input some text
+
+setInterval(): It repeats a given function at every given time interval.
+
+setTimeout(): It executes a function, after waiting a specified number of milliseconds.
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Window's Properties</title>
+</head>
+<body>
+	<h1>GeeksforGeeks</h1>
+	<button onclick="show()">Check</button>
+	<p id="prop"></p>
+	<script>
+		function show() {
+			var h = window.innerHeight;
+			var w = window.innerWidth;
+			var l = window.location;
+			var c = window.closed;
+			document.getElementById("prop").innerHTML =
+			"Frame's Height: "
+			+ h + "<br>"
+			+ "Frame's Width: "
+			+ w + "<br>"
+			+ "Window location:"
+			+ l
+			+ "<br>"
+			+ "Window Closed: "
+			+ c;
+		}
+	</script>
+</body>
+</html>
+
+output:
+
+GeeksforGeeks
+Check
+Frame's Height: 625
+Frame's Width: 1366
+Window location:file:///C:/Users/Rohith/Downloads/index.html
+Window Closed: false
+
+
+Difference between document and window:
+
+document 								window
+
+It represents any HTML document or web page 			It represents a browser window or frame that displays the contents of the webpage.
+that is loaded in the browser.
+
+It is loaded inside the window.					It is the very first object that is loaded in the browser.
+
+It is the object of window property.				It is the object of the browser.
+
+All the tags, elements with attributes in HTML 			Global objects, functions, and variables of JavaScript are members of the window object.
+are part of the document.
+
+We can access the document from a window using 			We can access the window from the window only. i.e. window.window
+the window. document
+
+Properties of document objects such as title, body, 		Properties of the window object cannot be accessed by the document object.
+cookies, etc can also be accessed by a window like this 
+window. document.title
+
+syntax: document.propertyname;					syntax: window.propertyname;
+
+example:							example:
+document.title :  will return the title of the document		window.innerHeight : will return the height of the content area of the browser	
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
